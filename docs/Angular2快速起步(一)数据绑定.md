@@ -73,7 +73,7 @@ export class AppComponent{
 ```
 **注意**：
 
-class两端的括号[]不能省略，否则只会在初始值时赋值，而不会对变化进行监听。<br/>
+class两端的括号[]不能省略，否则只会在初始值时赋值，而不会对变化进行监听。Angular会把这个表达式当做字符串常量看待，并用该字符串来初始化目标属性。它不会计算这个字符串。<br/>
 单向绑定语法还有一种较少使用的形式，把中括号换成bind-前缀。
 ```
 <p bind-class="classNames">selectItemName: {{selectItem.name}}</p>
@@ -121,3 +121,19 @@ $event是ngModelChange属性返回的输入框的值，它是一个Angular Event
 |样式|style property|`<button [style.color] = "isSpecial ? 'red' : 'green'">`|
 
 让我们从结构型云层走出来，看看每种绑定类型的具体情况。
+
+**属性（property）绑定**
+
+当要把视图元素的属性（property）设置为模板表达式时，就要写模板的属性绑定。最常用的属性绑定是把元素属性设置为组件属性的值。下面这个例子中，image元素的src属性会被绑定到组件的heroImageUrl属性上：
+```
+<img [src]="heroImageUrl"/>
+```
+
+**单向输入**
+
+人们经常把属性绑定描述成单向数据绑定，因为值的流动是单向的，从组件的数据属性流动到目标元素的属性。
+
+**CSS类绑定**
+
+借助CSS类绑定，可以从元素的class attribute上添加和移除CSS类名。<br/>
+CSS类绑定的语法与属性绑定类似。
