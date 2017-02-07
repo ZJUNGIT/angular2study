@@ -107,4 +107,17 @@ ngModelChange不是input元素的事件，它是ngModel指令的一个event prop
 对于`model.name = $event`。ngModelChange不会产生DOM事件，这是一个Angular EventEmitter属性，当它被fire（激活）时返回了输入值。<br/>
 $event是ngModelChange属性返回的输入框的值，它是一个Angular EventEmitter类型的属性，这个值就是我们想要的输入框的值。
 
-看完上面的例子，Angular2的数据绑定大致的语法就了解，不过这里还要深入解释几个知识点。
+看完上面的例子，Angular2的数据绑定语法就有了大致了解，不过这里还要深入解释几个知识点。<br/>
+
+**绑定目标**：数据绑定的目标是DOM中的某些东西。这个目标可能是（元素|组件|指令的）property、（元素|组件|指令的）事件，或（极少数情况下）attribute名。
+
+|   绑定类型   |    目标    |    范例    |
+| ----------  | --------  | --------- |
+|Property     |元素的 property <br/> 组件的 property<br/> 指令的 property |`<img [src] = "heroImageUrl">` <br/>`<hero-detail [hero]="currentHero"></hero-detail>`<br/>`<div [ngClass] = "{selected: isSelected}"></div>`|
+|事件|元素的事件<br/> 组件的事件<br/> 指令的事件<br/>|`<button (click) = "onSave()">Save</button>`<br/>`<hero-detail (deleteRequest)="deleteHero()"></hero-detail>`<br/>`<div (myClick)="clicked=$event">click me</div>`|
+|双向|事件与 property|`<input [(ngModel)]="heroName">`|
+|Attribute	|attribute（例外情况）|`<button [attr.aria-label]="help">help</button>`|
+|CSS 类|class property|`<div [class.special]="isSpecial">Special</div>`|
+|样式|style property|`<button [style.color] = "isSpecial ? 'red' : 'green'">`|
+
+让我们从结构型云层走出来，看看每种绑定类型的具体情况。
