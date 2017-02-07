@@ -137,3 +137,5 @@ $event是ngModelChange属性返回的输入框的值，它是一个Angular Event
 
 借助CSS类绑定，可以从元素的class attribute上添加和移除CSS类名。<br/>
 CSS类绑定的语法与属性绑定类似。
+
+https://angular.cn/docs/ts/latest/guide/template-syntax.html#!#template-expressions
