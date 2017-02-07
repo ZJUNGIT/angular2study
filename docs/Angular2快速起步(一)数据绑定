@@ -1,0 +1,23 @@
+# Angular2快速起步（一）
+
+## 数据绑定
+
+数据绑定是一种机制，用来协调用户所见和应用数据，即管理模型和视图组件之间的数据同步。
+
+angular2中有四种数据绑定：**插入符(interpolation)、单向绑定（one-way binding）、事件绑定(event binding)和双向绑定(two-way binding)**
+
+根据数据流的方向，可以把所有绑定归为三类。 每一类都有它独特的语法：
+
+|     数据方向     |         语法         |         绑定类型      |
+| --------------- | ------------------- | -------------------- |
+| 单向：从数据源到视图目标  |{{expression}}<br />[target]=“expression”<br />bind-target=“expression”| 插值表达式<br/>Property<br />Attribute<br />类(class)<br />样式(style) |
+|单向：从视图目标到数据源|(target) = "statement" <br/>on-target = "statement"|事件|
+|双向|[(target)] = "expression"<br/>bindon-target = "expression"|双向|
+
+#### 插值表达式
+说到数据绑定就不得不提到模板层和数据。在angular1中，以scope属性的形式存在的数据会通过watch机制来和模板进行绑定。在angular2中，component和数据有了清晰的对应关系：模板层中绑定的数据就是当前组件的实例属性，scope的概念消失了。
+
+先来看一个简单的数据绑定例子：(bind-data-demo1)
+```
+
+```
