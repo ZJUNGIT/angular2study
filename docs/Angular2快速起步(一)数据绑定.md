@@ -61,28 +61,30 @@ export class AppComponent{
 ```
 代码解读：
 
-1. @Component是一个装饰器，它使用配置对象来创建组件及视图。
+1.@Component是一个装饰器，它使用配置对象来创建组件及视图。
 
-2. `*ngFor`指令循环创建我们在模板中绑定的视图导出。 *是使用Angular2模板语法与模板标记的缩写。这个在后面的指令章节会有具体的介绍。
+2.`*ngFor`指令循环创建我们在模板中绑定的视图导出。 *是使用Angular2模板语法与模板标记的缩写。这个在后面的指令章节会有具体的介绍。
 
-3. {{ Item.name }}就是angular2模板的插入符语法。插入符语法不仅能用到html标签的内容上，也可以用到属性上。`class="{{className}}"`。
+3.{{ Item.name }}就是angular2模板的插入符语法。插入符语法不仅能用到html标签的内容上，也可以用到属性上。`class="{{className}}"`。
 
-4. 在进行属性绑定时，我们也可以使用单向绑定的语法：
+4.在进行属性绑定时，我们也可以使用单向绑定的语法：
 ```
  <p [class]="className">selectItemName: {{selectItem.name}}</p>
 ```
 **注意**：
 
-class两端的括号[]不能省略，否则只会在初始值时赋值，而不会对变化进行监听。
+class两端的括号[]不能省略，否则只会在初始值时赋值，而不会对变化进行监听。<br/>
 单向绑定语法还有一种较少使用的形式，把中括号换成bind-前缀。
 ```
 <p bind-class="classNames">selectItemName: {{selectItem.name}}</p>
 ```
-5. 事件绑定：当你点击项目值时候，onItemClicked()事件将被激活。一般情况下，Angular2事件绑定形式形如：
+
+5.事件绑定：当你点击项目值时候，onItemClicked()事件将被激活。一般情况下，Angular2事件绑定形式形如：
 ```
 (click)="onItemClicked(Item)
 ```
-6. 双向数据绑定：
+
+6.双向数据绑定：
 ```
 <input type="text" [(ngModel)]="selectItem.name">
 ```
@@ -98,8 +100,11 @@ ngModel指令使我们能够将表单绑定到Model。<br/>
 ```
 <input type="text" [ngModel]='selectItem.name' (ngModelChange)='selectItem.name=$event'>
 ```
-ngModelChange不是input元素的事件，它是ngModel指令的一个event property（事件属性）。当Angular看到一个绑定标记如[(x)]，它认为指令x有一个叫做x的输入指令和一个叫做xChange的输出指令。<br/>
-对于`model.name = $event`。ngModelChange不会产生DOM事件，这是一个Angular EventEmitter属性，当它被fire（激活）时返回了输入值。
+ngModelChange不是input元素的事件，它是ngModel指令的一个event property（事件属性）。<br/>
+当Angular看到一个绑定标记如[(x)]，它认为指令x有一个叫做x的输入指令和一个叫做xChange的输出指令。<br/>
+
+
+对于`model.name = $event`。ngModelChange不会产生DOM事件，这是一个Angular EventEmitter属性，当它被fire（激活）时返回了输入值。<br/>
 $event是ngModelChange属性返回的输入框的值，它是一个Angular EventEmitter类型的属性，这个值就是我们想要的输入框的值。
 
 看完上面的例子，Angular2的数据绑定大致的语法就了解，不过这里还要深入解释几个知识点。
