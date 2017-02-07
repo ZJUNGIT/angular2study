@@ -36,7 +36,7 @@ import {Component} from "@angular/core";
           </li>
         </ul>
         <input type="text" [(ngModel)]="selectItem.name">
-        <br>
+        <br/>
         <p class="{{className}}">selectItemName: {{selectItem.name}}</p>
     `
 })
@@ -59,7 +59,7 @@ export class AppComponent{
 }
 
 ```
-代码解读：<br>
+代码解读：<br/>
 1. @Component是一个装饰器，它使用配置对象来创建组件及视图。
 2. `*ngFor`指令循环创建我们在模板中绑定的视图导出。 *是使用Angular2模板语法与模板标记的缩写。这个在后面的指令章节会有具体的介绍。
 3. {{ Item.name }}就是angular2模板的插入符语法。插入符语法不仅能用到html标签的内容上，也可以用到属性上。`class="{{className}}"`。
@@ -80,10 +80,10 @@ export class AppComponent{
 ```
 <input type="text" [(ngModel)]="selectItem.name">
 ```
-ngModel指令使我们能够将表单绑定到Model。<br>
-[()]表示：双向数据绑定；<br>
-[]表示：数据从Model流向View；<br>
-()表示：数据从View流向Model;<br><br>
+ngModel指令使我们能够将表单绑定到Model。<br/>
+[()]表示：双向数据绑定；<br/>
+[]表示：数据从Model流向View；<br/>
+()表示：数据从View流向Model;<br/><br/>
 既然我们已经知道可以使用[]和()来进行数据的单向绑定，我们为何不尝试把[(ngModel)]进行拆分呢？
 ```
 <input #username type="text" [ngModel]='selectItem.name' (ngModel)='selectItem.name=username.value'>
@@ -92,7 +92,7 @@ ngModel指令使我们能够将表单绑定到Model。<br>
 ```
 <input type="text" [ngModel]='selectItem.name' (ngModelChange)='selectItem.name=$event'>
 ```
-ngModelChange不是input元素的事件，它是ngModel指令的一个event property（事件属性）。当Angular看到一个绑定标记如[(x)]，它认为指令x有一个叫做x的输入指令和一个叫做xChange的输出指令。<br>
+ngModelChange不是input元素的事件，它是ngModel指令的一个event property（事件属性）。当Angular看到一个绑定标记如[(x)]，它认为指令x有一个叫做x的输入指令和一个叫做xChange的输出指令。<br/>
 对于`model.name = $event`。ngModelChange不会产生DOM事件，这是一个Angular EventEmitter属性，当它被fire（激活）时返回了输入值。
 $event是ngModelChange属性返回的输入框的值，它是一个Angular EventEmitter类型的属性，这个值就是我们想要的输入框的值。
 
