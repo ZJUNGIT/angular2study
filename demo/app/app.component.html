@@ -5,7 +5,7 @@
         <div class="form-group">
             <label for="username">用户名</label>
             <input type="text" class="form-control" id="username" placeholder="用户名/昵称/手机号"
-              [(ngModel)]="user.username" name="username" required #username="ngModel"
+              [(ngModel)]="user.username" name="username" required #username="ngModel" 
             >
             <p [hidden]="username.pristine || username.valid" class="alert alert-danger">用户名不可以为空!</p>
         </div>

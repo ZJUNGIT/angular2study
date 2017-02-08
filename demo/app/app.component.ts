@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component,OnChanges} from "@angular/core";
 import { User } from "./classes/user";
 
 @Component({
@@ -7,7 +7,7 @@ import { User } from "./classes/user";
     styleUrls:["app/app.component.css"]
 })
 
-export class AppComponent{
+export class AppComponent implements OnChanges{
   active = true;
 
   user:any;
@@ -54,5 +54,6 @@ export class AppComponent{
     setTimeout(() => this.active =true,0);
     return false;
   }
+
 
 }
