@@ -1,39 +1,17 @@
 import {Component} from "@angular/core";
+import { User } from "./classes/user";
+
 
 @Component({
     selector:"root-app",
-    styles:[
-        `
-            .yellow{background:yellow;}
-        `
-    ],
-    template:`
-        <ul>
-          <li
-          *ngFor="let Item of Items"
-          (click)="onItemClicked(Item)">
-              {{ Item.name }}
-          </li>
-        </ul>
-        <input type="text" [(ngModel)]="selectItem.name">
-        <br>
-        <p class="{{className}}">selectItemName: {{selectItem.name}}</p>
-    `
+    templateUrl:"app/app.component.html",
+    styleUrls:["app/app.component.css"]
 })
 
 export class AppComponent{
-  public className:string = 'yellow';
+  user = new User("Jeason","This is password","sunjunjie8023@qq.com","beijing");
 
-  public Items = [
-    {name: "Butter"},
-    {name: "Milk"},
-    {name: "Yogurt"},
-    {name: "Cheese"}
-  ]
-
-  public selectItem = { name:''};
-
-  onItemClicked(item){
-    this.selectItem = item;
+  get userInfo() {
+      return JSON.stringify(this.user);
   }
 }
