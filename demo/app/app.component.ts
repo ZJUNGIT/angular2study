@@ -10,31 +10,30 @@ import { User } from "./classes/user";
 export class AppComponent{
   active = true;
 
-  user = new User("Jeason","This is password","sunjunjie8023@qq.com","beijing");
-  regionList = [
-    {
-      name:'beijing',
-      label:'北京'
-    },
-    {
-      name:"shanghai",
-      label:"上海"
-    },
-    {
-      name:"guangzhou",
-      label:"广州"
-    },
-    {
-      name:"shenzhen",
-      label:"深圳"
-    }
-  ];
+  user:any;
+
+  constructor() {
+       this.user = {
+           username: 'Jeason',
+           password: "This is password",
+           email:"sunjja@jiedaibao.com",
+           region:{
+             city: '北京',
+             street: '仰山公园'
+           }
+       };
+   }
+  regionList = {
+    citys:["上海","广州","深圳","北京"],
+    street:["望京","中关村","仰山公园"]
+  }
   get userInfo() {
       return JSON.stringify(this.user);
   }
 
   onSubmit(myForm){
     console.log(myForm);
+    console.log(myForm.value);
   }
 
   /**
