@@ -6,7 +6,9 @@ import { LogHelper } from "./log-helper.service";
 export class BetterLogger{
   logs:string[]=[];
 
-  constructor(private logHelper:LogHelper){}
+  constructor(private logHelper:LogHelper){
+    console.warn("BetterLogger Constructor")
+  }
 
   log(msg){
     this.logs.push(msg);
