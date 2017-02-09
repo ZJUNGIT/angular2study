@@ -3,6 +3,7 @@ import { User } from "./class/User";
 import { UserService } from "./services/user.service";
 import { LogService } from "./services/log.service";
 import { BetterLogger } from "./services/log-better.service";
+import { LogHelper } from "./services/log-helper.service";
 
 
 @Component({
@@ -11,7 +12,7 @@ import { BetterLogger } from "./services/log-better.service";
     styleUrls:["app/app.component.css"],
     providers:    [
       // LogService,
-      [{provide:LogService,useClass:BetterLogger}]
+      [LogHelper,{provide:LogService,useClass:BetterLogger}]
       UserService
     ]
 })
