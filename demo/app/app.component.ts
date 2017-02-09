@@ -1,10 +1,5 @@
-import {Component,OnInit} from "@angular/core";
-import { User } from "./class/User";
-import { UserService } from "./services/user.service";
-import { LogService } from "./services/log.service";
-import { BetterLogger } from "./services/log-better.service";
-import { LogHelper } from "./services/log-helper.service";
-import { logValue } from "./services/log-value.service";
+import {Component,OnInit,Inject} from "@angular/core";
+import {APP_CONFIG,HERO_DI_CONFIG} from "./services/app-config.service";
 
 
 @Component({
@@ -12,21 +7,18 @@ import { logValue } from "./services/log-value.service";
     templateUrl:"app/app.component.html",
     styleUrls:["app/app.component.css"],
     providers:    [
-      // LogService,
-      // [LogHelper,{provide:BetterLogger,useClass:BetterLogger}],
-      // [LogHelper,{provide:LogService,useExisting:BetterLogger}],
-      [{provide:LogService,useValue:logValue}],
-      UserService
+      {provide:APP_CONFIG,useValue:HERO_DI_CONFIG}
     ]
 })
 
 export class AppComponent implements OnInit {
-    users:User[];
-    constructor(private userService:UserService){}
 
-    ngOnInit(){
-      this.users = this.userService.getUsers();
-    }
+  constructor(@Inject(APP_CONFIG) private config:APP_CONFIG){
+  }
+
+  ngOnInit(){
+    this.title=this.config.title;
+  }
 
 
 }
