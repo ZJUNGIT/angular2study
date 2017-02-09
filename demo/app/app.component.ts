@@ -4,6 +4,7 @@ import { UserService } from "./services/user.service";
 import { LogService } from "./services/log.service";
 import { BetterLogger } from "./services/log-better.service";
 import { LogHelper } from "./services/log-helper.service";
+import { logValue } from "./services/log-value.service";
 
 
 @Component({
@@ -12,8 +13,9 @@ import { LogHelper } from "./services/log-helper.service";
     styleUrls:["app/app.component.css"],
     providers:    [
       // LogService,
-      [LogHelper,{provide:BetterLogger,useClass:BetterLogger}],
-      [LogHelper,{provide:LogService,useExisting:BetterLogger}],
+      // [LogHelper,{provide:BetterLogger,useClass:BetterLogger}],
+      // [LogHelper,{provide:LogService,useExisting:BetterLogger}],
+      [{provide:LogService,useValue:logValue}],
       UserService
     ]
 })
