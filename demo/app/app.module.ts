@@ -13,7 +13,8 @@ import { AboutComponent } from "./about/about.component";
 const appRoutes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'about', component: AboutComponent },
-  { path: '', component: NewsComponent }
+  // { path: '', component: NewsComponent }
+  { path: '', redirectTo: '/news', pathMatch: 'full'}  //重定向   pathMatch:full prefix
 ];
 
 
