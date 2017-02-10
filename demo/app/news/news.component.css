@@ -1,0 +1,16 @@
+.newslist ul {
+  list-style: none;
+  color: #333;
+}
+.newslist ul li{
+  line-height: 40px;
+}
+
+.newslist ul li a{
+  color: #333;
+  text-decoration: none;
+}
+
+.newslist ul li a:hover{
+  color: #007fff;
+}

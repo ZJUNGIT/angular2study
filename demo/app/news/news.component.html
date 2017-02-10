@@ -1,1 +1,7 @@
-这是news-component页面
+<div class="newslist">
+  <ul>
+      <li *ngFor = "let news of newslist">
+        <a routerLink="{{news.id}}">{{news.title}}</a>
+      </li>
+  </ul>
+</div>
