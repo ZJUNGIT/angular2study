@@ -1,11 +1,33 @@
-.DEMO-form-container{
-  width: 500px;
-  margin: 20px auto;
-}
-.ng-valid[required], .ng-valid.required {
-    border-left: 5px solid #42A948; /* green */
+.main{
+  width: 980px;
+  margin: 0 auto;
 }
 
-.form-group .ng-invalid {
-    border-left: 5px solid #a94442; /* red */
+nav{
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+nav ul{
+  width: 980px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 50px;
+}
+
+nav ul li a{
+  padding: 0 10px;
+  color: #2b445d;
+}
+nav ul li a:hover{
+  text-decoration: none;
+  color: #007fff;
+  font-weight: bold;
+}
+
+nav ul li a.active{
+  font-weight: bold;
+  color: #007fff;
 }

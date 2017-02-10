@@ -1,6 +1,14 @@
-<h1>依赖注入</h1>
-<ul>
-    <li *ngFor="let user of users">
-        用户的姓名: {{user.name}}; 用户的年龄: {{user.age}}; 用户的邮箱: {{user.email}}
-    </li>
-</ul>
+<div class="main">
+  <nav>
+    <ul>
+      <li>
+        <a routerLink="news">新闻</a>
+      </li>
+      <li>
+        <a routerLink="about">关于</a>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
+<!-- RouterOutlet是RouterModule提供的指令之一。 当我们在应用中导航时，路由器就把激活的组件显示在<router-outlet>里面。 -->
