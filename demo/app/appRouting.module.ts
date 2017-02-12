@@ -6,7 +6,12 @@ import { AboutComponent } from "./about/about.component";
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/news', pathMatch: 'full'}  //重定向   pathMatch:full prefix
+  { path: '', redirectTo: '/news', pathMatch: 'full'},  //重定向   pathMatch:full prefix
+  {
+    path:'admin',
+    loadChildren:'app/admin/admin.module#AdminModule',
+    // canLoad:[AuthGuard]
+  }
 ];
 
 @NgModule({
