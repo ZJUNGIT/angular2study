@@ -8,6 +8,10 @@ import { AppRoutingModule } from "./appRouting.module";
 
 import { NewsModule } from "./news/news.module";
 import { AboutModule } from "./about/about.module";
+import { AdminModule } from "./admin/admin.module";
+import { LoginRoutingModule } from "./login-routing.module";
+
+import { LoginComponent } from "./login.component";
 
 
 
@@ -16,9 +20,11 @@ import { AboutModule } from "./about/about.module";
     BrowserModule,
     AppRoutingModule,
     NewsModule,
-    AboutModule
+    AboutModule,
+    AdminModule,
+    LoginRoutingModule
    ],
-  declarations: [ AppComponent],
+  declarations: [ AppComponent,LoginComponent],
   bootstrap:    [ AppComponent ],
   providers: []
 })
