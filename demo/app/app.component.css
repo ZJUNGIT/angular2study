@@ -1,6 +1,7 @@
 .main{
   width: 980px;
   margin: 0 auto;
+  position: relative;
 }
 
 nav{
@@ -31,4 +32,14 @@ nav ul li a.active{
   text-decoration: none;
   font-weight: bold;
   color: #007fff;
+}
+
+.setting{
+  width: 100px;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  text-align: center;
 }
