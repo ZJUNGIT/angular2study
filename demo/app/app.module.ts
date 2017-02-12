@@ -21,7 +21,7 @@ import { LoginComponent } from "./login.component";
     AppRoutingModule,
     NewsModule,
     AboutModule,
-    AdminModule,
+    // AdminModule,
     LoginRoutingModule
    ],
   declarations: [ AppComponent,LoginComponent],
