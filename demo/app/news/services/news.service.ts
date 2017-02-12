@@ -11,7 +11,6 @@ export class NewsService {
   }
 
   getNewsById(id:number):Promise<News> {
-    console.log(id,"====");
     return this.getNewsList()
                 .then(newslist => newslist.find(news => news.id === id));
   }

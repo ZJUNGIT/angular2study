@@ -5,12 +5,10 @@ import { News } from "app/classes/news";
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  templateUrl:'app/news/detail/news-detail.component.html',
-  styleUrls:["app/news/detail/news-detail.component.css"]
+  templateUrl:'app/news/components/detail/news-detail.component.html',
+  styleUrls:["app/news/components/detail/news-detail.component.css"]
 })
- //如何获取路由中的id？
- //NewsDetailComponent应该从ActivatedRoute服务的可观察对象params中取得id参数，
- //并通过NewsService服务获取具有这个指定id的新闻详情。
+
 export class NewsDetailComponent implements OnInit{
   news:News;
   constructor(

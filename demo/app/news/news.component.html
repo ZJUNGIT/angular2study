@@ -1,4 +1,4 @@
-<div class="newslist">
+<div class="newslist" *ngIf="newslist">
   <ul>
       <li *ngFor = "let news of newslist">
         <a routerLink="{{news.id}}">{{news.title}}</a>

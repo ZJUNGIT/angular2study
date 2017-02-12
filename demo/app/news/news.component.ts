@@ -1,6 +1,6 @@
 import { Component,OnInit } from "@angular/core";
-import { NewsService } from "../services/news.service";
-import { News } from "../classes/News";
+import { NewsService } from "./services/news.service";
+import { News } from "./classes/News";
 
 @Component({
   templateUrl:"app/news/news.component.html",
@@ -15,6 +15,7 @@ export class NewsComponent implements OnInit {
   ngOnInit(){
     this.newsService.getNewsList().then(newslist =>{
       this.newslist = newslist;
+      console.log(newslist)
     });
 
   }
