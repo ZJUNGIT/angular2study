@@ -18,6 +18,7 @@ const adminRoutes:Routes = [
       {
         path:'', //来看AdminComponent下的子路由，我们有一个带path和children的子路由，但它没有使用component。这并不是配置中的失误，而是在使用无组件路由。
                 //虽然我们希望对admin路径下的危机中心管理类路由进行分组，但并不需要另一个仅用来分组路由的组件。 这同时也允许我们守卫子路由。
+        canActivateChild:[AuthGuard],
         children:[
           {path:'news',component:ManageNewsComponent},
           {path:'heroes',component:ManageAboutComponent},

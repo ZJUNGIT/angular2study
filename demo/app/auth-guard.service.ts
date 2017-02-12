@@ -15,8 +15,14 @@ export class AuthGuard implements CanActivate{
 
   //ActivatedRouteSnapshot包含了即将被激活的路由，而RouterStateSnapshot包含了该应用即将到达的状态。
   canActivate(route:ActivatedRouteSnapshot,state:RouterStateSnapshot):boolean{
+    console.log("canActivate called!");
     let url:string = state.url;
     return this.checkLogin(url);
+  }
+
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    console.log("canActivateChild called!")
+    return this.canActivate(route, state);
   }
 
   checkLogin(url:string):boolean{
