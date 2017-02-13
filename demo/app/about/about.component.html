@@ -1,8 +1,8 @@
-<p>这是about-Component页面</p>
-
-<div>这部分是自定义管道：n次方</div>
-<div>Normal power: <input [(ngModel)]="power"></div>
-<div>Boost factor: <input [(ngModel)]="factor"></div>
-<p>
-  Super Hero Power: {{power | exponent: factor}}
-</p>
+New hero:
+  <input type="text" #box
+          (keyup.enter)="addHero(box.value); box.value=''"
+          placeholder="hero name">
+  <button (click)="reset()">Reset</button>
+  <div *ngFor="let hero of (heroes |flyingHeroes)" >
+    {{hero.name}}
+  </div>
