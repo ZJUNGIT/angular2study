@@ -1,1 +1,9 @@
-这是about-Component页面
+<p>这是about-Component页面</p>
+<p>测试自定义结构型指令</p>
+<div>
+  <button type="button" (click)="changeUnless()" name="button">change unless</button> <br>
+  unless: {{unlessValue}}
+</div>
+<div *myUnless='unless'>
+  这部分根据unless而创建/移除
+</div>
