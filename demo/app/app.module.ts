@@ -13,6 +13,11 @@ import { LoginRoutingModule } from "./login-routing.module";
 
 import { LoginComponent } from "./login.component";
 
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+
+
 
 
 
@@ -24,7 +29,8 @@ import { LoginComponent } from "./login.component";
     NewsModule,
     AboutModule,
     // AdminModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)//forRoot配置方法需要InMemoryDataService类实例，用来向内存数据库填充数据：
    ],
   declarations: [ AppComponent,LoginComponent],
   bootstrap:    [ AppComponent ],

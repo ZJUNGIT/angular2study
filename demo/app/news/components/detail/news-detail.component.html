@@ -1,5 +1,11 @@
-<div class="news-detail" *ngIf='news'>
+<div class="news-detail" *ngIf='news' style="margin-top:10px;">
   <div class="header">
-    <h3>{{news.title}}</h3>
+    <h3 *ngIf = "!canEdit">{{news.title}}</h3>
+    <input *ngIf = "canEdit" class="form-control titleEdit"  type="text" [(ngModel)]= "news.title"/>
   </div>
+  <br>
+  <p>
+    <button type="button" name="button"  class="btn btn-default" (click)="changeEdit()" >编辑</button>
+    <button type="button" name="button"  class="btn btn-default" (click)="save()" >保存</button>
+  </p>
 </div>
