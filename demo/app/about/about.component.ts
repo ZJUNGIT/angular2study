@@ -24,7 +24,7 @@ export class AboutComponent implements OnInit{
         name:'Jeason',canFly:true
       },
       {
-        name:"Mojie",canFly:false
+        name:"Moji",canFly:false
       }
     ];
   }
