@@ -3,6 +3,7 @@ import {AboutComponent } from "./about.component";
 import { AboutRoutingModule} from "./AboutRouting.module"
 import { UnlessDirective } from "../directives/unless.directive";
 import { HighlightDirective } from "../directives/highlight.directive";
+import { ExponentPipe } from "../pipes/exponential.pipe";
 
 @NgModule({
   imports:[
@@ -11,7 +12,8 @@ import { HighlightDirective } from "../directives/highlight.directive";
   declarations:[
     AboutComponent,
     UnlessDirective,
-    HighlightDirective
+    HighlightDirective,
+    ExponentPipe
   ]
 })
 
