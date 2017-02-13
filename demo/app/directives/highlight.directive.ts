@@ -1,4 +1,4 @@
-import { Directive,ElementRef,Renderer,HostListener } from "@angular/core";
+import { Directive,ElementRef,Renderer,HostListener,Input } from "@angular/core";
 
 @Directive({
   selector:'[myHighlight]'
@@ -8,6 +8,7 @@ import { Directive,ElementRef,Renderer,HostListener } from "@angular/core";
 export class HighlightDirective {
   private _domElem:ElementRef;
   private _renderer:Renderer;
+   private _defaultColor = "red";
 
   constructor(
     private elem:ElementRef,
@@ -18,9 +19,11 @@ export class HighlightDirective {
     this._render = render;
   }
 
+  @Input("myHighlight") highlightColor:string;
+
   @HostListener("mouseenter")
   onMouseEnter(){
-    this._render.setElementStyle(this._domElem,"backgroundColor","red");
+    this._render.setElementStyle(this._domElem,"backgroundColor",this.highlightColor || this._defaultColor);
   }
 
   @HostListener("mouseleave")
