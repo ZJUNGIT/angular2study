@@ -21,10 +21,10 @@ export class AboutComponent implements OnInit{
   reset(){
     this.heroes = [
       {
-        name:'canFlyHero',canFly:true
+        name:'Jeason',canFly:true
       },
       {
-        name:"cantFlying",canFly:false
+        name:"Mojie",canFly:false
       }
     ];
   }

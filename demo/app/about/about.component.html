@@ -3,6 +3,18 @@ New hero:
           (keyup.enter)="addHero(box.value); box.value=''"
           placeholder="hero name">
   <button (click)="reset()">Reset</button>
+  <p>
+    All Heroes:
+  </p>
+  <div *ngFor="let hero of heroes">
+    {{hero.name}}
+  </div>
+  <br>
+  <hr>
+  <br>
+  <p>
+    Can Flying Heroes :
+  </p>
   <div *ngFor="let hero of (heroes |flyingHeroes)" >
     {{hero.name}}
   </div>
