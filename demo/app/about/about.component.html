@@ -1,18 +1,8 @@
 <p>这是about-Component页面</p>
-<p>测试自定义结构型指令</p>
-<div>
-  <button type="button" (click)="changeUnless()" name="button">change unless</button> <br>
-  unless: {{unlessValue}}
-</div>
-<div *myUnless='unless'>
-  这部分根据unless而创建/移除
-</div>
-<br>
-<div myHighlight="yellow">
-  这部分是自定义属性型指令
-</div>
 
-<br>
-<br>
 <div>这部分是自定义管道：n次方</div>
-<div>{{2|exponent:10}}</div>
+<div>Normal power: <input [(ngModel)]="power"></div>
+<div>Boost factor: <input [(ngModel)]="factor"></div>
+<p>
+  Super Hero Power: {{power | exponent: factor}}
+</p>

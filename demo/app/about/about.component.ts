@@ -5,12 +5,7 @@ import { Component } from "@angular/core";
 })
 
 export class AboutComponent{
-  unless:boolean = true;
+  power:number =  2;
+  factor:number = 2;
 
-  get unlessValue(){
-    return this.unless;
-  }
-  changeUnless(){
-    this.unless = !this.unless;
-  }
 }
