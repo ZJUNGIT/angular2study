@@ -20,7 +20,7 @@ import { LogHelper } from "./services/log-helper.service";
 
 export class AppComponent implements OnInit {
     users:User[];
-    constructor(private userService:UserService){}
+    constructor(private userService:UserService,private betterLog:BetterLogger){}
 
     ngOnInit(){
       this.users = this.userService.getUsers();
