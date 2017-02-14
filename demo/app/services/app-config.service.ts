@@ -1,4 +1,4 @@
-import { OpaqueToken } from "@angular/core";
+import { OpaqueToken } from "@angular/core"; //不透明的令牌
 
 export interface AppConfig {
     apiEndpoint:string,

@@ -13,6 +13,7 @@ import {APP_CONFIG,HERO_DI_CONFIG} from "./services/app-config.service";
 
 export class AppComponent implements OnInit {
 
+  //现在，在@Inject装饰器的帮助下，这个配置对象可以注入到任何需要它的构造函数中：
   constructor(@Inject(APP_CONFIG) private config:APP_CONFIG){
   }
 
