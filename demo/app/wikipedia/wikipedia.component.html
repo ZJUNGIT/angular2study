@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+<p><i>{{fetches}}</i></p>
+<input #term (keyup)="search(term.value)"/>
+<ul *ngIf = "items">
+  <li *ngFor="let item of items | async">{{item}}</li>
+</ul>
+<!-- search(term)方法委托WikipediaService服务来完成实际操作。
+该服务返回的是一个字符串数组的可观察对象 (Observable<string[]>)。
+没有像NewsListComponent那样在组件内部订阅这个可观察对象，
+我们把这个可观察对象作为结果传给模板（通过items属性），
+模板中ngFor上的 async（异步）管道会对这个订阅进行处理 -->

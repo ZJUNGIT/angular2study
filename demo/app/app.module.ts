@@ -10,6 +10,7 @@ import { NewsModule } from "./news/news.module";
 import { AboutModule } from "./about/about.module";
 import { AdminModule } from "./admin/admin.module";
 import { LoginRoutingModule } from "./login-routing.module";
+import { WikipediaModule } from "./wikipedia/wikipedia.module";
 
 import { LoginComponent } from "./login.component";
 
@@ -28,6 +29,7 @@ import { InMemoryDataService }  from './in-memory-data.service';
     AppRoutingModule,
     NewsModule,
     AboutModule,
+    WikipediaModule,
     // AdminModule,
     LoginRoutingModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService)//forRoot配置方法需要InMemoryDataService类实例，用来向内存数据库填充数据：
