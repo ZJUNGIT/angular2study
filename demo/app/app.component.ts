@@ -12,7 +12,7 @@ import { LogHelper } from "./services/log-helper.service";
     styleUrls:["app/app.component.css"],
     providers:    [
       // LogService,
-      [LogHelper,{provide:LogService,useClass:BetterLogger}]
+      [LogHelper,{provide:LogService,useClass:BetterLogger}],
       UserService
     ]
 })
