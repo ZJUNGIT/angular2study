@@ -11,7 +11,7 @@ import { BetterLogger } from "./services/log-better.service";
     styleUrls:["app/app.component.css"],
     providers:    [
       // LogService,
-      [{provide:LogService,useClass:BetterLogger}]
+      [{provide:LogService,useClass:BetterLogger}],
       UserService
     ]
 })
