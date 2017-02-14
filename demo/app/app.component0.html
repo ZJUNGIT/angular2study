@@ -1,0 +1,38 @@
+<div class="DEMO-form-container">
+    <h1>用户注册</h1>
+    {{userInfo}}
+    <form class="DEMO-form" (ngSubmit)="onSubmit(myForm)" #myForm ="ngForm">
+        <div class="form-group">
+            <label for="username">用户名</label>
+            <input type="text" class="form-control" id="username" placeholder="用户名/昵称/手机号"
+              [(ngModel)]="user.username"  required
+            >
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="text" class="form-control" id="password" placeholder="密码"
+              [(ngModel)]="user.password" name= "password"
+            >
+        </div>
+        <div class="form-group">
+            <label for="email">邮箱</label>
+            <input type="email" class="form-control" id="email" placeholder="邮箱"
+              [(ngModel)]="user.email"  name="email"
+            >
+        </div>
+        <div class="form-group">
+            <fieldset ngModelGroup="region">
+               <label>城市:</label>
+               <select id="region" class="form-control" [(ngModel)] = "user.region.city" name="city">
+                   <option *ngFor="let city of regionList.citys" [value]="city">{{city}}</option>
+               </select>
+               <label>街道:</label>
+               <select id="region" class="form-control" [(ngModel)] = "user.region.street" name="street">
+                   <option *ngFor="let street of regionList.street" [value]="street">{{street}}</option>
+               </select>
+            </fieldset>
+        </div>
+        <button type="submit" class="btn btn-default">提交</button>
+        <button  class="btn btn-default" (click)="reset(myForm)">重置</button>
+    </form>
+</div>

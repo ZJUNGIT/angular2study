@@ -40,20 +40,23 @@ export class AppComponent implements OnChanges{
    * 清空数据，这时候那些验证错误就会被检测到
    */
   reset(myForm){
-    this.user = {};
-  }
-
-  reset(myForm){
-    myForm.reset();
+    this.user = {
+      region:{}
+    };
     return false;
   }
 
-  reset(myForm){
-    this.user = {};
-    this.active = false;
-    setTimeout(() => this.active =true,0);
-    return false;
-  }
+  // reset(myForm){
+  //   myForm.reset();
+  //   return false;
+  // }
+  //
+  // reset(myForm){
+  //   this.user = {};
+  //   this.active = false;
+  //   setTimeout(() => this.active =true,0);
+  //   return false;
+  // }
 
 
 }
