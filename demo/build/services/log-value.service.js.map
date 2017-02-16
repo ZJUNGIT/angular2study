@@ -1,0 +1,1 @@
+{"version":3,"file":"log-value.service.js","sourceRoot":"","sources":["../../app/services/log-value.service.ts"],"names":[],"mappings":";AAAA,IAAI,QAAQ,GAAE;IACZ,IAAI,EAAC,CAAC,OAAO,EAAC,OAAO,CAAC;IACtB,GAAG,EAAC,UAAC,GAAG;QACN,OAAO,CAAC,IAAI,CAAC,eAAe,EAAC,GAAG,CAAC,CAAC;IACpC,CAAC;IACD,IAAI,EAAC;QACH,OAAO,CAAC,GAAG,CAAC,gBAAgB,CAAC,CAAC;IAChC,CAAC;CACF,CAAA;AAEQ,4BAAQ"}
