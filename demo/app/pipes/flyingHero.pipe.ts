@@ -2,7 +2,7 @@ import { Pipe,PipeTransform } from "@angular/core";
 
 @Pipe({
   name:'flyingHeroes',
-  pure:false
+  pure:true
 })
 
 export class FlyingHeroesPipe implements PipeTransform{
